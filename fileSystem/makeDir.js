@@ -11,6 +11,7 @@ fs.mkdir('/tmp/test', function(err) {
     }
 });
 
+console.log("Going to create directory C:/tmp/test1");
 fs.mkdir('/tmp/test1', function(err) {
     if(err) {
         console.log(err);
@@ -19,6 +20,7 @@ fs.mkdir('/tmp/test1', function(err) {
     }
 });
 
+console.log("Going to create directory C:/tmp/test2");
 fs.mkdir('/tmp/test2', function(err) {
     if(err) {
         console.log(err);
