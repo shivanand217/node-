@@ -1,5 +1,6 @@
 
-# File upload to object storage "Digital ocean" obejct storage used in this example.
+# File upload to object storage 
+## Digital ocean obejct storage used in this example.
 
 Install dependencies with npm install
 
