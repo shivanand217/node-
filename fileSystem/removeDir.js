@@ -1,0 +1,2 @@
+// fs.rmdir(path, callback)
+
