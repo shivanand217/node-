@@ -20,7 +20,7 @@ fs.readdir('E:/tmp/',function(err,files) {
     }
 });
 
-fs.readdir('C:/tmp', function(err,files) {
+fs.readdir('C:/tmp/', function(err,files) {
     if(err) {
         console.log(err);
     } else {
