@@ -8,16 +8,27 @@
 
 var fs = require("fs");
 
-console.log("Going to read directory E:/tmp.");
-
 fs.readdir('E:/tmp/',function(err,files) {
     if(err) {
         console.log(err);
     } else {
-        console.log("This directory contains following contents: ");
+        console.log("Directory E:/tmp contains following contents: ");
         files.forEach( function(file) {
             console.log(file);
         });
         console.log("Files which does not contains any extension are directories");
     }
 });
+
+fs.readdir('C:/tmp', function(err,files) {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log("\nDirectory C:/tmp contains following contents: ");
+        files.forEach( function(file) {
+            console.log(file);
+        });
+        console.log("Files which does not contains any extension are directories");
+    }
+});
+
