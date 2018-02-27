@@ -154,5 +154,3 @@ var foo = {
 console.log('foo.bar is: ', foo.bar);
 foo.bas();
 foo.ano(foo.bak);
-
-
