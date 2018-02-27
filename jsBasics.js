@@ -156,22 +156,26 @@ foo.bas();
 foo.ano(foo.bak);
 
 /******************* JS prototype *******************/
+// prototypes are shared between all the objects or call it instances.
 function poo() { 
     var p  = {
-        a: 1,
-        b: 2,
-        c: 3
-    };
+                a: 1,
+                b: 2,
+                c: 3
+             };
 };
 poo.prototype.bar = 123;
 
-// instance of poo function
+// instances of poo function
 var bas = new poo();
-console.log(bas.p.a);
-
-// another instance
 var paa = new poo();
+
 // prototype value copied
-console.log(bas.bar);
-console.log(bas.bar);
+console.log('\nvalue copied \nbas.bar is: '+bas.bar+'\npaa.bar is: '+paa.bar);
+
 // console.log(bas.bar);
+poo.prototype.bar = 456 // prototype value changed 
+
+// all instance will be affected 
+console.log('instance changed \nbas.bar is : '+bas.bar+"\npaa.bar is: "+paa.bar);
+
