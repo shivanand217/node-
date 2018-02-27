@@ -45,6 +45,7 @@ var foo2 = function () {
 foo2();
 
 // Higher order function in JS. a function which takes a function as its argument
+/*
 setTimeout(function () {
     console.log("message will be displayed after 2s.");
 }, 2000 );
@@ -53,7 +54,7 @@ setTimeout(function () {
 function foo4() {
     console.log("this message will be displayed after 1s.");
 }
-setTimeout(foo4, 1000);
+setTimeout(foo4, 1000); */
 
 // display clock after every second
 function clock() { // We create a new Date object
@@ -99,7 +100,7 @@ function userClicked() {
         console.log("Bye");
     });
 }
-userClicked();
+// userClicked();
 
 
 // JS copies reference of an existing variable
@@ -121,5 +122,37 @@ console.log("foo.bas is "+ foo.bas);
 var foo;
 console.log(foo);
 var foo = {bar: 123};
-console.log("foo.bar is "+foo.bar+" \nfoo.bas is "+foo.bas);
+console.log("foo.bar is " + foo.bar + " \nfoo.bas is "+foo.bas);
+
+console.log('\n');
+// use of 'this'
+var foo = {
+    bar: 123,
+    bas: function() {
+        console.log('inside this.bar is: '+this.bar);
+    },
+    bak : {
+        bar: 111,
+        bas: 222
+    },
+    ano: function(bak1) {
+        var bak = {
+            bar: 333,
+            bas: 444
+        };
+        console.log('bak.bas of foo is '+bak1.bas+" \nbak.bar of foo is "+bak1.bar);
+        // using 'this' keyword
+        console.log('bak.bar of foo is: '+this.bak.bar+'\nbak.bas of foo is: '+this.bak.bas);
+        // local bak.bas
+        console.log('bak.bas of ano is: '+bak.bas+'\nbak.bar of ano is: '+bak.bar);
+    },
+    auto: (function() {
+        console.log('anonymous hai pehle aayega');
+    })()
+};
+
+console.log('foo.bar is: ', foo.bar);
+foo.bas();
+foo.ano(foo.bak);
+
 
