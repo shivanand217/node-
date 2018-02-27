@@ -157,6 +157,8 @@ foo.ano(foo.bak);
 
 /******************* JS prototype *******************/
 // prototypes are shared between all the objects or call it instances.
+// imagine you need 1000 instances created. all the functionality we
+// put on prototype is shared, and therefore prototype saves memory.
 function poo() { 
     var p  = {
                 a: 1,
@@ -179,3 +181,20 @@ poo.prototype.bar = 456 // prototype value changed
 // all instance will be affected 
 console.log('instance changed \nbas.bar is : '+bas.bar+"\npaa.bar is: "+paa.bar);
 
+
+// JS class pattern , JS is not a OO language, but we can make such patterns
+// to make it work like an object oriented language
+function Class() {
+    this.someName = 'Shiv';
+}
+
+// Member function of the class
+Class.prototype.Memberfunction = function() {
+    this.someName = 'Anand';
+}
+
+// instance
+var instance = new Class();
+console.log(instance.someName);
+instance.Memberfunction();
+console.log(instance.someName); // someName Changed
