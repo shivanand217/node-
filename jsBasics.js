@@ -154,3 +154,24 @@ var foo = {
 console.log('foo.bar is: ', foo.bar);
 foo.bas();
 foo.ano(foo.bak);
+
+/******************* JS prototype *******************/
+function poo() { 
+    var p  = {
+        a: 1,
+        b: 2,
+        c: 3
+    };
+};
+poo.prototype.bar = 123;
+
+// instance of poo function
+var bas = new poo();
+console.log(bas.p.a);
+
+// another instance
+var paa = new poo();
+// prototype value copied
+console.log(bas.bar);
+console.log(bas.bar);
+// console.log(bas.bar);
